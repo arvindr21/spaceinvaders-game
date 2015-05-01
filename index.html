@@ -1,4 +1,58 @@
+<head>
+    <style>
+    /* http://stackoverflow.com/a/16344389/1015046 */
+    
+    .blink {
+        -webkit-animation-name: blinker;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+    }
+    
+    @-webkit-keyframes blinker {
+        0% {
+            opacity: 1.0;
+        }
+        50% {
+            opacity: 0.0;
+        }
+        100% {
+            opacity: 1.0;
+        }
+    }
+    
+    .hide {
+        display: none;
+    }
+    
+    h1,
+    h2 {
+        text-align: center;
+    }
+    
+    input {
+        font-size: 100%;
+        padding: 10px;
+        color: #efefef;
+        border: 1px solid #999;
+        background-color: #787878;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    </style>
+</head>
+
 <body>
-	<canvas id="screen" width="310" height="310"></canvas>
-	<script type="text/javascript" src="game.js"></script>
+    <h1>Space Invaders</h1>
+    <hr>
+    <input type="button" value="Start Game" id="start" /> 
+    <input type="button" value="Pause Game" id="pause" class="hide" />
+    <input type="button" value="Resume Game" id="resume" class="hide" />
+    <input type="button" value="Stop Game" id="stop" class="hide" />
+    <br>
+    <h2 id="gameover" class="hide blink">Game Over.. You Lose!!</h2>
+    <h2 id="youwon" class="hide blink">You won!! Great job!!</h2>
+    <canvas id="screen" width="310" height="310"></canvas>
+    <script type="text/javascript" src="game.js"></script>
 </body>
